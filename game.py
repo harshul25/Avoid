@@ -2,7 +2,7 @@ import curses
 from random import randint
 from time import sleep
 from random import uniform
-
+#for objects of rach pedestrian
 class enemy:
 
     man = {
@@ -13,6 +13,7 @@ class enemy:
         'legL':[0,2],
         'legR':[2,2]
         }
+    #constructor
     def __init__(self):
         return
 
@@ -26,7 +27,7 @@ class enemy:
         'legR':[53,2+y]
         }
         return
-
+    
     def get_enemy(self):
         return self.man
 
@@ -43,7 +44,7 @@ class enemy:
         self.move_left(pace)
         return self.man
 answer = ""
-
+#main menu
 print("\n")
 print("""   |    \\      /  /---\\   --|-- |---    """)
 print("""  | |    \\    /  /     \\    |   |     \\ """)
@@ -125,6 +126,7 @@ house = {
 actor = man
 points = (30,10)
 win.addch(points[1],points[0],'*')
+#The update loop for the window created
 while key != ESC:
 
     #Add score
@@ -199,10 +201,10 @@ while key != ESC:
         actor['legL'][0] +=1
         actor['legR'][0] +=1
         actor['body'][0] +=1
-    #move the house out of frame
+    
 
 
-        # for the enemies 
+    # for the enemies 
     if counter == 0 and score != 0:
         for i in range(randint(1,3)):
             enemiesList.append(enemy(randint(3,16)).get_enemy())
